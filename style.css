@@ -1,4 +1,9 @@
-div {
+.size {
+    font-family: "Helvetica";
+    font-size: 50pt;
+}
+
+.container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,20 +12,12 @@ div {
     height: 100%;
 }
 
-p {
-    font-family: "Helvetica";
-    font-size: 50pt;
-}
-
 @media screen and (max-width: 600px) {
     body {
         background-color: red;
     }
-    .small {
-        display: flex;
-    }
-    .medium, .large {
-        display: none;
+    .size:before {
+        content: "\2264  600";
     }
 }
 
@@ -28,11 +25,8 @@ p {
     body {
         background-color: green;
     }
-    .medium {
-        display: flex;
-    }
-    .small, .large {
-        display: none;
+    .size:before {
+        content: "601 - 800";
     }
 }
 
@@ -40,10 +34,7 @@ p {
     body {
         background-color: lightblue;
     }
-    .large {
-        display: flex;
-    }
-    .small, .medium {
-        display: none;
+    .size:before {
+        content: "> 800";
     }
 }
